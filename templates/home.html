@@ -18,6 +18,9 @@
             <tr>
                 <td>{{curso['curso']}}</td>
                 <td>{{curso['area']}}</td>
+                <form class="container" action="delete" method="POST">
+                <td><a class="btn btn-danger" href='/Deletar/task'>Deletar</a></td>
+
             </tr>
             {% endfor %}
         </table>
