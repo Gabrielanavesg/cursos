@@ -29,4 +29,6 @@ def deletar(curso):
     cursos.remove(curso)
     return render_template('home.html', cursos=cursos)   
 
+print('teste sincronizar')
+
 app.run(debug=True)
