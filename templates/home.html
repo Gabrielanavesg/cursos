@@ -8,21 +8,25 @@
         <br/>
 
         <form class="container" action="create" method="POST">
-            <input name='curso' class='form-control'/>
+            <input name='nomecurso' placeholder="Digite o curso" class='form-control'/>
+            <input name='areacurso' placeholder="Digite a área" class='form-control'/>
             <button class='btn btn-primary'>Salvar</button>
         </form>
 
         <table class="table table-hover">
-
+            <tr>
+                <th>Curso</th>
+                <th>Área</th>
+            </tr>
             {% for curso in cursos: %}
             <tr>
                 <td>{{curso['curso']}}</td>
                 <td>{{curso['area']}}</td>
-                <form class="container" action="delete" method="POST">
-                <td><a class="btn btn-danger" href='/Deletar/task'>Deletar</a></td>
-
+                <form class="container" action="/Deletar" method="POST">
+                <td><a class="btn btn-danger" href='/Deletar/curso'>Deletar</a></td>
             </tr>
             {% endfor %}
         </table>
     </body>
 </html>
+
