@@ -22,13 +22,11 @@ def create():
     cursos.append(curso)
     return render_template('home.html', cursos=cursos)
 
-#@app.route('/Deletar<int:curso', methods['POST'])
-def deletar(curso):
-    curso = request.form('nomecurso') 
-    curso = request.form('areacurso')
-    cursos.remove(curso)
-    return render_template('home.html', cursos=cursos)   
-
-print('teste sincronizar')
+@app.route('/delete/<int:id>')
+def delete(id):
+    for curso in cursos:
+        id = i =+ 1
+    cursos.pop(id)
+    return render_template('home.html', cursos=cursos, id=id)
 
 app.run(debug=True)
