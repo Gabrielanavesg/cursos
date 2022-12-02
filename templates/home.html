@@ -5,7 +5,8 @@
     </head>
     <body>
 
-        <br/>
+        <h1>Cadastro de Cursos</h1>
+        <br>
 
         <form class="container" action="create" method="POST">
             <input name='nomecurso' placeholder="Digite o curso" class='form-control'/>
@@ -17,13 +18,13 @@
             <tr>
                 <th>Curso</th>
                 <th>Área</th>
+                <th>Excluir</th>
             </tr>
             {% for curso in cursos: %}
             <tr>
                 <td>{{curso['curso']}}</td>
-                <td>{{curso['area']}}</td>
-                <form class="container" action="/Deletar" method="POST">
-                <td><a class="btn btn-danger" href='/Deletar/curso'>Deletar</a></td>
+                <td>{{curso['area']}}</td>            
+                <td><a href="/delete/1">Excluir</a></td>
             </tr>
             {% endfor %}
         </table>
