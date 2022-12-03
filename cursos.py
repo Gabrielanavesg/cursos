@@ -31,7 +31,10 @@ def delete():
 def deletar():
     removercurso = request.form['deletarcurso']
     curso_removido = { "curso": removercurso}
-    cursos.remove(curso_removido)
+    if curso_removido in cursos:
+        cursos.remove(curso_removido)
+    else:
+        return render_template('cursonaoencontrado.html')
           
     return redirect(URL)
 
