@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for
 
 app = Flask(__name__)
 
-URL = "https://5000-jooshica-cursos-4amhp5x5f07.ws-us77.gitpod.io"
+URL = "https://5000-jooshica-cursos-cwij0dc2n39.ws-us77.gitpod.io"
 
 import csv
 
