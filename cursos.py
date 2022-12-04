@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for
 
 app = Flask(__name__)
 
-URL = "https://5000-jooshica-cursos-cwij0dc2n39.ws-us77.gitpod.io"
+URL = "https://5000-jooshica-cursos-40f6j3ocsxd.ws-us77.gitpod.io" #Colocar o endereço gerado no port
 
 import csv
 
