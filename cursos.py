@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for
 
 app = Flask(__name__)
 
-URL = "https://5000-jooshica-cursos-2uj6d3gtzd6.ws-us77.gitpod.io"
+URL = "https://5000-jooshica-cursos-5fzw8okiftd.ws-us77.gitpod.io"
 
 import csv
 
@@ -20,6 +20,9 @@ cursos = [
     {'curso': 'Física', 'area': 'Exatas'},
     {'curso': 'Química', 'area': 'Biológicas'}
 ]
+
+with open('cursos.csv', 'rt') as ler:
+  leitor = csv.DictReader(ler)
 
 @app.route('/')
 def home():
