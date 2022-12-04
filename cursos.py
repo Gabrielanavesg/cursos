@@ -2,27 +2,21 @@ from flask import Flask, render_template, request, redirect, url_for
 
 app = Flask(__name__)
 
-URL = "https://5000-jooshica-cursos-5fzw8okiftd.ws-us77.gitpod.io"
+URL = "https://5000-jooshica-cursos-4amhp5x5f07.ws-us77.gitpod.io"
 
 import csv
 
-cursos = [
-    {'curso': 'Administração', 'area': 'Humanas'},
-    {'curso': 'Direito', 'area': 'Humanas'},
-    {'curso': 'Arquitetura', 'area': 'Sociais'},
-    {'curso': 'História', 'area': 'Humanas'},
-    {'curso': 'Engenharia Civil', 'area': 'Exatas'},
-    {'curso': 'Publicidade', 'area': 'Humanas'},
-    {'curso': 'Medicina', 'area': 'Biológicas'},
-    {'curso': 'Nutrição', 'area': 'Biológicas'},
-    {'curso': 'Educação Física', 'area': 'Biológicas'},
-    {'curso': 'Moda', 'area': 'Humanas'},
-    {'curso': 'Física', 'area': 'Exatas'},
-    {'curso': 'Química', 'area': 'Biológicas'}
-]
+cursos = []
 
-with open('cursos.csv', 'rt') as ler:
-  leitor = csv.DictReader(ler)
+leitura = open('cursos.csv')
+
+ler = csv.DictReader(leitura)
+
+for curso in ler:
+    curso = {'curso': curso['curso'], 'area': curso['area']}
+    cursos.append(curso)
+
+leitura.close()
 
 @app.route('/')
 def home():
