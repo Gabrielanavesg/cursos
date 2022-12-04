@@ -11,6 +11,7 @@
 
         <form class="container" action="create" method="POST">
             <input name='nomecurso' placeholder="Digite o curso" class='form-control'/>
+            <input name='areacurso' placeholder="Digite a área" class='form-control'/>
             <button class='btn btn-primary'>Salvar</button>
         </form>
 
@@ -21,6 +22,7 @@
             {% for curso in cursos: %}
             <tr>
                 <td>{{curso['curso']}}</td>
+                <td>{{curso['area']}}</td>
             </tr>
             {% endfor %}
         </table>
