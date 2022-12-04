@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for
 
 app = Flask(__name__)
 
-URL = "https://5000-jooshica-cursos-bau0c0jmax2.ws-us77.gitpod.io"
+URL = "https://5000-jooshica-cursos-2uj6d3gtzd6.ws-us77.gitpod.io"
 
 import csv
 
@@ -49,9 +49,16 @@ def deletar():
 
     return redirect(URL)
 
-with open('cursos.csv', 'wt') as salvar:
-    save = csv.DictWriter(salvar, ['curso', 'area']) 
-    save.writeheader()
-    save.writerows(cursos)
+@app.route('/save')
+def save():
+    return render_template('salvar.html')
+
+@app.route('/salvar', methods=['POST'])
+def salvar():
+    with open('cursos.csv', 'wt') as salvar:
+        save = csv.DictWriter(salvar, ['curso', 'area']) 
+        save.writeheader()
+        save.writerows(cursos)
+        return redirect(URL)
 
 app.run(debug=True)
