@@ -5,30 +5,35 @@
         <title>Cursos</title>
     </head>
     <body>
-
-        <h1>Cadastro de Cursos</h1>
+        <div class="p-3 mb-2 bg-dark bg-gradient text-white">
         <br>
-
+        <div align='center'><h3>Cadastro de Cursos</h3></div>
+       
+        
         <form class="container" action="create" method="POST">
             <input name='nomecurso' placeholder="Digite o curso" class='form-control'/>
             <input name='areacurso' placeholder="Digite a área" class='form-control'/>
             <button class='btn btn-primary'>Salvar</button>
         </form>
 
+        
         <table class="table table-hover">
             <tr>
-                <th>Curso</th>
+                <th><p class="text-light"><u>Curso</u></p></th>
+                <th><p class="text-light"><u>Área</u></p></th>
             </tr>
             {% for curso in cursos: %}
             <tr>
-                <td>{{curso['curso']}}</td>
-                <td>{{curso['area']}}</td>
+                <td><p class="text-light">{{curso['curso']}}</p></td>
+                <td><p class="text-light">{{curso['area']}}</p></td>
             </tr>
             {% endfor %}
         </table>
         <div align="right" class="container">
-            <a href="/delete" class="btn btn-dark">Excluir</a><br><br><br>
-        </div>    
+            <a href="/delete" class="btn btn-light">Excluir</a><br><br><br>
+        </div>
+        
+    </div> 
     </body>
 </html>
 
