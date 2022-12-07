@@ -2,8 +2,6 @@ from flask import Flask, render_template, request, redirect, url_for
 
 app = Flask(__name__)
 
-URL = "https://5000-jooshica-cursos-owtwz6abv2y.ws-us77.gitpod.io" #Colocar o endereço gerado no port
-
 import csv
 
 cursos = []
@@ -44,7 +42,7 @@ def deletar():
     else:
         return render_template('cursonaoencontrado.html')
 
-    return redirect(URL)
+    return render_template('home.html', cursos=cursos)
 
 @app.route('/save')
 def save():
@@ -56,6 +54,6 @@ def salvar():
         save = csv.DictWriter(salvar, ['curso', 'area']) 
         save.writeheader()
         save.writerows(cursos)
-        return redirect(URL)
+        return render_template('home.html', cursos=cursos)
 
 app.run(debug=True)
